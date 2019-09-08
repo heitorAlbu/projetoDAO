@@ -4,8 +4,14 @@ import Interfaces.InterfaceEntidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name="Aluno.selectAll",
+                query="SELECT a FROM Aluno a"),
+}) 
 public class Aluno implements InterfaceEntidade {
    
     

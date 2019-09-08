@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 
 public abstract class DAOAbstrato implements InterfaceDAO {
     
-    @Override
+    
     public void inserir(InterfaceEntidade pEntidade) 
     { 
         inserir(pEntidade, UtilJPA.getEntityManager(), true);

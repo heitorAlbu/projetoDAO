@@ -1,16 +1,12 @@
 
 package DAO;
 
-import javax.persistence.EntityManager;
+import Modelos.Aluno;
 
-
-
-
-public class DAOAluno extends DAOAbstrato  {
+public class DAOAluno extends DAOGenerico<Aluno> {
     
     public DAOAluno(){
      
     }
-
-    
 }
+ 
