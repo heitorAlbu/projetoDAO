@@ -21,6 +21,12 @@ public class Main {
     
       
         DAOGenerico<Aluno> daoAluno = new DAOAluno();
+        
+        daoAluno.saveOrUpdate(new Aluno(1, "AIHASS"));
+        daoAluno.saveOrUpdate(new Aluno(2, "HAHAYY"));
+        daoAluno.saveOrUpdate(new Aluno(3, "HEYY"));
+        daoAluno.saveOrUpdate(new Aluno(4, "HELLO WORLD"));
+        daoAluno.saveOrUpdate(new Aluno(5, "JAVASCRIPT"));
             
         List<Aluno> listagem = (List<Aluno>)daoAluno.consultarTodos();
       
