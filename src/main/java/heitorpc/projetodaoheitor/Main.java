@@ -29,6 +29,8 @@ public class Main {
         
         DAOGenerico<Aluno> daoAluno = new DAOGenerico<Aluno>();
         
+        //daoAluno.saveOrUpdate(a3);
+        
         daoAluno.remove(Aluno.class, 66);
     
         
