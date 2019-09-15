@@ -59,7 +59,7 @@ public abstract class DAOGenerico<T extends InterfaceEntidade> {
            
            Query q;
             q = em.createNamedQuery("Aluno.selectAll");
-          list = q.getResultList();
+            list = q.getResultList();
             
         }catch(Exception ex){
             list = new ArrayList();
