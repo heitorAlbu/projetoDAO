@@ -4,6 +4,7 @@ import Interfaces.InterfaceEntidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -19,6 +20,8 @@ public class Aluno implements InterfaceEntidade {
     private int Id;
     @Column(name = "Nome")
     private String Nome;
+    @ManyToOne
+    private Turma turma;
     
     public Aluno(){
         
