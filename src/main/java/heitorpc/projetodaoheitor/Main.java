@@ -3,10 +3,12 @@ package heitorpc.projetodaoheitor;
 
 import BaseDados.UtilJPA;
 import DAO.DAOAluno;
+import DAO.DAOAlunoCadastro;
 import DAO.DAOGenerico;
 import DAO.DAOProfessor;
 import DAO.DAOTurma;
 import Modelos.Aluno;
+import Modelos.AlunoCadastro;
 import Modelos.Cargo;
 import Modelos.Disciplina;
 import Modelos.Professor;
@@ -27,7 +29,7 @@ public class Main {
                
       //AlunoDAO.inserir(a2);
         
-DAOGenerico daoAluno = new DAOAluno() ;
+      //DAOGenerico daoAluno = new DAOAluno() ;
       
       //        for (Aluno obj : listagem){
       //             System.out.println("Nome :" + obj.getNome());
@@ -51,7 +53,7 @@ DAOGenerico daoAluno = new DAOAluno() ;
 //        p1.setCargo(c1);
 //        
 //        
-       DAOGenerico<Professor> daoProfessor = new DAOProfessor();
+//       DAOGenerico<Professor> daoProfessor = new DAOProfessor();
 //        
 //        daoProfessor.remove(Professor.class, 1);
 //        
@@ -60,34 +62,54 @@ DAOGenerico daoAluno = new DAOAluno() ;
 //------------OPERAÇÕES TURMA ------------------
        
 
-       DAOGenerico<Turma> daoTurma = new DAOTurma();
-       
-       Turma t1 = new Turma();
-       
-       Aluno a1 =  (Aluno)daoAluno.findById(Aluno.class, 66);
-       Aluno a2 =  (Aluno)daoAluno.findById(Aluno.class, 99);
-       
-       Professor p1 = daoProfessor.findById(Professor.class, 2);
-       t1.setProfessor(p1);
+//       DAOGenerico<Turma> daoTurma = new DAOTurma();
+//       
+//       Turma t1 = new Turma();
+//       
+//       Aluno a1 =  (Aluno)daoAluno.findById(Aluno.class, 66);
+//       Aluno a2 =  (Aluno)daoAluno.findById(Aluno.class, 99);
+//       
+//       Professor p1 = daoProfessor.findById(Professor.class, 2);
+//       t1.setProfessor(p1);
+//      
+//       t1.setCapacidade(25);
+//       
+//       List<Aluno> RelacaoAlunos = new ArrayList<Aluno>();
+//       
+//       RelacaoAlunos.add(a1);
+//       RelacaoAlunos.add(a2);
+//   
+//       
+//       t1.setRelacaoAlunos(RelacaoAlunos);
+//      
+//       Disciplina d1 = new Disciplina();
+//       
+//       d1.setCodigoDisciplina(192);
+//       d1.setNomeDisicplina("Fruticultura");
+//       
+//       t1.setDisciplina(d1);
+//       
+//       daoTurma.saveOrUpdate(t1);
+
+
+//-------------------OPERAÇÕES ALUNO CADASTRO @ONETOONE--------------
+
+        DAOGenerico<Aluno> daoAluno = new DAOAluno();
       
-       t1.setCapacidade(25);
-       
-       List<Aluno> RelacaoAlunos = new ArrayList<Aluno>();
-       
-       RelacaoAlunos.add(a1);
-       RelacaoAlunos.add(a2);
-   
-       
-       t1.setRelacaoAlunos(RelacaoAlunos);
-      
-       Disciplina d1 = new Disciplina();
-       
-       d1.setCodigoDisciplina(192);
-       d1.setNomeDisicplina("Fruticultura");
-       
-       t1.setDisciplina(d1);
-       
-       daoTurma.saveOrUpdate(t1);
+        DAOGenerico<AlunoCadastro> daoCadastro = new DAOAlunoCadastro();
+        
+        AlunoCadastro ca1 = new AlunoCadastro();
+        
+        Aluno a1 = daoAluno.findById(Aluno.class, 66);
+        
+        ca1.setCpf("058.966.204-03");
+        ca1.setIdade(29);
+        ca1.setSerie("3º Ano");
+        ca1.setSexo("Masculino");
+        ca1.setAluno(a1);
+        
+        daoCadastro.saveOrUpdate(ca1);
+        
     }
    
 }

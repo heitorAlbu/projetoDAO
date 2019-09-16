@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 @Entity
 @NamedQueries({
@@ -22,6 +23,9 @@ public class Aluno implements InterfaceEntidade {
     private String Nome;
     @ManyToOne
     private Turma turma;
+    @OneToOne
+    private AlunoCadastro cadastro;
+    
     
     public Aluno(){
         
