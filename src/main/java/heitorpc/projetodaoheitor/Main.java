@@ -5,12 +5,14 @@ import BaseDados.UtilJPA;
 import DAO.DAOAluno;
 import DAO.DAOAlunoCadastro;
 import DAO.DAOGenerico;
+import DAO.DAONota;
 import DAO.DAOProfessor;
 import DAO.DAOTurma;
 import Modelos.Aluno;
 import Modelos.AlunoCadastro;
 import Modelos.Cargo;
 import Modelos.Disciplina;
+import Modelos.Nota;
 import Modelos.Professor;
 import Modelos.Turma;
 import java.util.ArrayList;
@@ -94,22 +96,38 @@ public class Main {
 
 //-------------------OPERAÇÕES ALUNO CADASTRO @ONETOONE--------------
 
+//        DAOGenerico<Aluno> daoAluno = new DAOAluno();
+//      
+//        DAOGenerico<AlunoCadastro> daoCadastro = new DAOAlunoCadastro();
+//        
+//        AlunoCadastro ca1 = new AlunoCadastro();
+//        
+//        Aluno a1 = daoAluno.findById(Aluno.class, 66);
+//        
+//        ca1.setCpf("058.966.204-03");
+//        ca1.setIdade(29);
+//        ca1.setSerie("3º Ano");
+//        ca1.setSexo("Masculino");
+//        ca1.setAluno(a1);
+//        
+//        daoCadastro.saveOrUpdate(ca1);
+
+//----------------------OPERAÇÕES NOTAS @ManyToOne--------------------------------
         DAOGenerico<Aluno> daoAluno = new DAOAluno();
-      
-        DAOGenerico<AlunoCadastro> daoCadastro = new DAOAlunoCadastro();
-        
-        AlunoCadastro ca1 = new AlunoCadastro();
-        
-        Aluno a1 = daoAluno.findById(Aluno.class, 66);
-        
-        ca1.setCpf("058.966.204-03");
-        ca1.setIdade(29);
-        ca1.setSerie("3º Ano");
-        ca1.setSexo("Masculino");
-        ca1.setAluno(a1);
-        
-        daoCadastro.saveOrUpdate(ca1);
-        
-    }
+        DAOGenerico<Nota> daoNota = new DAONota();
+
+
+    Aluno a1 = daoAluno.findById(Aluno.class, 123);
+    Nota n1 = new Nota();
+    n1.setId(1);
+    n1.setMateria("Matematica");
+    n1.setNota(3.4);
+    n1.setTipoProva("1ª Avaliação");
+    n1.setAluno(a1);
+    
+    daoNota.saveOrUpdate(n1);
+    
+    
+            }
    
 }
