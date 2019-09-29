@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -21,7 +22,8 @@ public class Turma implements InterfaceEntidade{
     private Professor Professor;
     @OneToMany(mappedBy = "turma")
     private List<Aluno> RelacaoAlunos;
-    
+    @ManyToOne
+    private Departamento Dept;
     
     public Turma(){
        
@@ -67,7 +69,7 @@ public class Turma implements InterfaceEntidade{
     }
     
     @Override
-    public Object getChavePrimaria(){
+    public Disciplina getChavePrimaria(){
         return this.disciplina;
     }
    

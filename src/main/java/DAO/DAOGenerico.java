@@ -13,9 +13,9 @@ import javax.persistence.Query;
 
 public abstract class DAOGenerico<T extends InterfaceEntidade> {
     
-    private static EntityManager Em = UtilJPA.getEntityManager();
+    static EntityManager Em = UtilJPA.getEntityManager();
     
-    public T findById(Class<T> classe, int id){
+    public T findById(Class<T> classe, Object id){
              return Em.find(classe, id);
     }
     
@@ -49,7 +49,7 @@ public abstract class DAOGenerico<T extends InterfaceEntidade> {
         }
     }
     
-    public Object consultarTodos(){
+    public Object consultarTodosAlunos(){
         EntityManager em = UtilJPA.getEntityManager();
         
         Object list ;
