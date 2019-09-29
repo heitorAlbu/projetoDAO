@@ -8,6 +8,7 @@ import DAO.DAODepartamento;
 import DAO.DAOGenerico;
 import DAO.DAONota;
 import DAO.DAOProfessor;
+import DAO.DAOProjeto;
 import DAO.DAOTurma;
 import Modelos.Aluno;
 import Modelos.AlunoCadastro;
@@ -16,6 +17,7 @@ import Modelos.Departamento;
 import Modelos.Disciplina;
 import Modelos.Nota;
 import Modelos.Professor;
+import Modelos.Projeto;
 import Modelos.Turma;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -133,8 +135,8 @@ public class Main {
 //    daoNota.saveOrUpdate(n1);
     
 //----------------OPERAÇÕES DEPARTAMENTO @OneToMany --------------------------  
-   // DAOGenerico<Turma> daoTurma = new DAOTurma();     
-    DAOGenerico<Departamento> daoDepartamento = new DAODepartamento();
+//    DAOGenerico<Turma> daoTurma = new DAOTurma();     
+//    DAOGenerico<Departamento> daoDepartamento = new DAODepartamento();
 //    Disciplina d1 = new Disciplina();
 //    Disciplina d2 = new Disciplina();
 //    
@@ -158,23 +160,62 @@ public class Main {
 //    dep1.setId(1);
 //    dep1.setNomeDepartamento("Agronomia");
 //    dep1.setArea("agrárias");
-    
-    
-    Departamento d1 = daoDepartamento.findById(Departamento.class, 1);
-    
-    
-    
-        for (int i = 0; i < d1.getRelacaoTurmas().size()-1; i++) {
-            System.out.println("departamento " + d1.getNomeDepartamento());
-            System.out.println("Turma" + d1.getRelacaoTurmas().get(i).getDisciplina() + "Professor" + d1.getRelacaoTurmas().get(i).getProfessor().getNome());
-        }
-    
-    
-    
-     //System.out.println(" nome da turma " + t1.getDisciplina().getNomeDisicplina());
-    
-    
-    
+//    
+//    Departamento d1 = daoDepartamento.findById(Departamento.class, 1);
+//    
+//        for (int i = 0; i < d1.getRelacaoTurmas().size()-1; i++) {
+//            System.out.println("departamento " + d1.getNomeDepartamento());
+//            System.out.println("Turma" + d1.getRelacaoTurmas().get(i).getDisciplina() + "Professor" + d1.getRelacaoTurmas().get(i).getProfessor().getNome());
+//        }
+//    
+//    
+//    
+//----------------OPERAÇÕES Projeto @ManyToMany --------------------------     
+//    DAOGenerico daoAluno = new DAOAluno() ;
+//    DAOGenerico daoProjeto = new DAOProjeto();
+//    
+//   Aluno a1 = (Aluno)daoAluno.findById(Aluno.class, 3);
+//   Aluno a2 = (Aluno)daoAluno.findById(Aluno.class, 4);
+//   Aluno a3 = (Aluno)daoAluno.findById(Aluno.class, 5);
+//   
+//   Projeto p1 = new Projeto();
+//   
+//    List<Aluno> GrupoAlunos = new ArrayList<Aluno>();
+//    
+//    GrupoAlunos.add(a1);
+//    GrupoAlunos.add(a2);
+//    GrupoAlunos.add(a3);
+//    
+//   p1.setId(2);
+//   p1.setTitulo("Melhoramento vegetal do milho");
+//   p1.setGrupoAlunos(GrupoAlunos);
+//   
+//   daoProjeto.saveOrUpdate(p1);
+//
+//
+//       Projeto p = (Projeto)daoProjeto.findById(Projeto.class, 1);
+//       Projeto p2 = (Projeto)daoProjeto.findById(Projeto.class, 2);
+//       
+//       
+//       
+//       Aluno a1 = (Aluno)daoAluno.findById(Aluno.class, 1);
+//       
+//        Collection<Projeto> lista = a1.getProjetos();
+//        lista.add(p);
+//        lista.add(p2);
+//       
+//       a1.setProjetos(lista);
+//       
+//       daoAluno.saveOrUpdate(a1);
+       
+//        Projeto p = (Projeto)daoProjeto.findById(Projeto.class, 1);
+//        
+//        Collection<Aluno> lista = p.getGrupoAlunos();
+//        
+//        for(Aluno a : lista){
+//            System.out.println("  ALUNO : " + a.getNome());
+//            System.out.println("  DISCIPLINA : " + a.getTurma().getDisciplina());
+//    }
             
     }
 }

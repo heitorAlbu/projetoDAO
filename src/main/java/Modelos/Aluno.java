@@ -1,9 +1,11 @@
 package Modelos;
 
 import Interfaces.InterfaceEntidade;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -25,6 +27,9 @@ public class Aluno implements InterfaceEntidade {
     private Turma turma;
     @OneToOne
     private AlunoCadastro cadastro;
+    
+    @ManyToMany
+    private Collection<Projeto> Projetos;
     
     
     public Aluno(){
@@ -51,6 +56,32 @@ public class Aluno implements InterfaceEntidade {
     public void setNome(String Nome) {
         this.Nome = Nome;
     }
+
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public AlunoCadastro getCadastro() {
+        return cadastro;
+    }
+
+    public void setCadastro(AlunoCadastro cadastro) {
+        this.cadastro = cadastro;
+    }
+
+    public Collection<Projeto> getProjetos() {
+        return Projetos;
+    }
+
+    public void setProjetos(Collection<Projeto> Projetos) {
+        this.Projetos = Projetos;
+    }
+    
+    
 
     @Override
     public Object getChavePrimaria() {

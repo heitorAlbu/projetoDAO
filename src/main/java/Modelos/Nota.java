@@ -16,6 +16,8 @@ public class Nota implements InterfaceEntidade {
     @ManyToOne
     private Aluno Aluno;
     
+   
+    
     public Nota(){
         
     }
